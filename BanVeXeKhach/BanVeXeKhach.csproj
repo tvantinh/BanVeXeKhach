@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="frmLichSuBanVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLichSuBanVe.designer.cs">
+      <DependentUpon>frmLichSuBanVe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTaoTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <Compile Include="TrangChu.Designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmLichSuBanVe.resx">
+      <DependentUpon>frmLichSuBanVe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTaoTaiKhoan.resx">
       <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>

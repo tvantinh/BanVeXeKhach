@@ -46,7 +46,7 @@ namespace BanVeXeKhach
 
         private void lichSu_TC_Click(object sender, EventArgs e)
         {
-            //openChildForm(new frmlic());
+            openChildForm(new frmLichSuBanVe());
         }
 
         private void chuyenXe_TC_Click(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace BanVeXeKhach
         }
         private void TrangChu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult r = MessageBox.Show("bạn có muốn thoát chương trình ?", "cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult r = MessageBox.Show("Bạn có muốn thoát chương trình ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if(r == DialogResult.No)
             {
                 e.Cancel = true;

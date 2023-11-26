@@ -19,7 +19,7 @@ namespace BanVeXeKhach
             set { connect = value; }
         }
 
-        string str_connection = "Data Source=DESKTOP-CAAQMG8;Initial Catalog=BANVEXEKHACH;Integrated Security=True";
+        string str_connection = "Data Source=HUNG;Initial Catalog=BANVEXEKHACH;Integrated Security=True";
 
         public DBConnect()
         {
@@ -75,6 +75,15 @@ namespace BanVeXeKhach
         public int updateDatabase(DataTable dt)
         {
             string sql = "select * from tuyenxe";
+            SqlDataAdapter da = new SqlDataAdapter(sql, connect);
+            SqlCommandBuilder cb = new SqlCommandBuilder(da);
+            int kq = da.Update(dt);
+            return kq;
+        }
+
+        public int updateDatabaseNV(DataTable dt)
+        {
+            string sql = "select * from NHANVIEN";
             SqlDataAdapter da = new SqlDataAdapter(sql, connect);
             SqlCommandBuilder cb = new SqlCommandBuilder(da);
             int kq = da.Update(dt);
