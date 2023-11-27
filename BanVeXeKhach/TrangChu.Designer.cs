@@ -350,7 +350,7 @@
             // 
             // panel_Body
             // 
-            this.panel_Body.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel_Body.BackColor = System.Drawing.SystemColors.Control;
             this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Body.Location = new System.Drawing.Point(0, 117);
             this.panel_Body.Name = "panel_Body";
