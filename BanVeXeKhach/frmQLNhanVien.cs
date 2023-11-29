@@ -60,9 +60,6 @@ namespace BanVeXeKhach
             txtMaNhanVien.DataBindings.Add("Text", pDT, "IDNhanVien");
             txtHoTen.DataBindings.Add("Text", pDT, "name");
             dateTimePicker1.DataBindings.Add("Text", pDT, "ngaySinh");
-            
-            
-
         }
 
         private void btnSua_Click(object sender, EventArgs e)

@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.IDChuyenXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDTuyenXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NoiDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Noiden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDLoaiXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianKhoiHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.noiden_lb = new System.Windows.Forms.Label();
+            this.ThoiGianKhoiHanh_lb = new System.Windows.Forms.Label();
+            this.GiaVe_lb = new System.Windows.Forms.Label();
+            this.noidi_lb = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,12 +51,16 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.luotve_rdo = new System.Windows.Forms.RadioButton();
+            this.luotdi_rdo = new System.Windows.Forms.RadioButton();
+            this.noiDenSearch_lb = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.noiDiSearch_lb = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -69,18 +74,36 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDChuyenXe,
+            this.IDTuyenXe,
             this.NoiDi,
             this.Noiden,
-            this.IDLoaiXe,
             this.GiaVe,
             this.ThoiGianKhoiHanh,
             this.ThoiGianKetThuc});
             this.dataGridView2.GridColor = System.Drawing.Color.Silver;
-            this.dataGridView2.Location = new System.Drawing.Point(2, 25);
+            this.dataGridView2.Location = new System.Drawing.Point(5, 21);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(575, 269);
             this.dataGridView2.TabIndex = 47;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            // 
+            // IDChuyenXe
+            // 
+            this.IDChuyenXe.DataPropertyName = "IDChuyenXe";
+            this.IDChuyenXe.HeaderText = "Mã Chuyến";
+            this.IDChuyenXe.Name = "IDChuyenXe";
+            this.IDChuyenXe.ReadOnly = true;
+            this.IDChuyenXe.Width = 50;
+            // 
+            // IDTuyenXe
+            // 
+            this.IDTuyenXe.DataPropertyName = "IDTuyenXe";
+            this.IDTuyenXe.HeaderText = "Mã Tuyến Xe";
+            this.IDTuyenXe.Name = "IDTuyenXe";
+            this.IDTuyenXe.ReadOnly = true;
+            this.IDTuyenXe.Width = 50;
             // 
             // NoiDi
             // 
@@ -98,12 +121,6 @@
             this.Noiden.ReadOnly = true;
             this.Noiden.Width = 80;
             // 
-            // IDLoaiXe
-            // 
-            this.IDLoaiXe.HeaderText = "Loại xe";
-            this.IDLoaiXe.Name = "IDLoaiXe";
-            this.IDLoaiXe.ReadOnly = true;
-            // 
             // GiaVe
             // 
             this.GiaVe.DataPropertyName = "giave";
@@ -118,7 +135,7 @@
             this.ThoiGianKhoiHanh.HeaderText = "Thời gian khởi hành";
             this.ThoiGianKhoiHanh.Name = "ThoiGianKhoiHanh";
             this.ThoiGianKhoiHanh.ReadOnly = true;
-            this.ThoiGianKhoiHanh.Width = 90;
+            this.ThoiGianKhoiHanh.Width = 110;
             // 
             // ThoiGianKetThuc
             // 
@@ -126,7 +143,7 @@
             this.ThoiGianKetThuc.HeaderText = "Thời gian kết thúc dự kiến";
             this.ThoiGianKetThuc.Name = "ThoiGianKetThuc";
             this.ThoiGianKetThuc.ReadOnly = true;
-            this.ThoiGianKetThuc.Width = 90;
+            this.ThoiGianKetThuc.Width = 110;
             // 
             // label1
             // 
@@ -157,11 +174,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.noiden_lb);
+            this.groupBox1.Controls.Add(this.ThoiGianKhoiHanh_lb);
+            this.groupBox1.Controls.Add(this.GiaVe_lb);
+            this.groupBox1.Controls.Add(this.noidi_lb);
             this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -173,57 +191,57 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cụ thể";
             // 
-            // label11
+            // noiden_lb
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(365, 44);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 16);
-            this.label11.TabIndex = 71;
-            this.label11.Text = "label11";
+            this.noiden_lb.AutoSize = true;
+            this.noiden_lb.Location = new System.Drawing.Point(362, 17);
+            this.noiden_lb.Name = "noiden_lb";
+            this.noiden_lb.Size = new System.Drawing.Size(19, 16);
+            this.noiden_lb.TabIndex = 71;
+            this.noiden_lb.Text = "...";
             // 
-            // label10
+            // ThoiGianKhoiHanh_lb
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(134, 43);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 16);
-            this.label10.TabIndex = 70;
-            this.label10.Text = "label10";
+            this.ThoiGianKhoiHanh_lb.AutoSize = true;
+            this.ThoiGianKhoiHanh_lb.Location = new System.Drawing.Point(134, 43);
+            this.ThoiGianKhoiHanh_lb.Name = "ThoiGianKhoiHanh_lb";
+            this.ThoiGianKhoiHanh_lb.Size = new System.Drawing.Size(19, 16);
+            this.ThoiGianKhoiHanh_lb.TabIndex = 70;
+            this.ThoiGianKhoiHanh_lb.Text = "...";
             // 
-            // label9
+            // GiaVe_lb
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(318, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 16);
-            this.label9.TabIndex = 69;
-            this.label9.Text = "label9";
+            this.GiaVe_lb.AutoSize = true;
+            this.GiaVe_lb.Location = new System.Drawing.Point(391, 44);
+            this.GiaVe_lb.Name = "GiaVe_lb";
+            this.GiaVe_lb.Size = new System.Drawing.Size(19, 16);
+            this.GiaVe_lb.TabIndex = 69;
+            this.GiaVe_lb.Text = "...";
             // 
-            // label8
+            // noidi_lb
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(64, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 16);
-            this.label8.TabIndex = 68;
-            this.label8.Text = "label8";
+            this.noidi_lb.AutoSize = true;
+            this.noidi_lb.Location = new System.Drawing.Point(64, 17);
+            this.noidi_lb.Name = "noidi_lb";
+            this.noidi_lb.Size = new System.Drawing.Size(19, 16);
+            this.noidi_lb.TabIndex = 68;
+            this.noidi_lb.Text = "...";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(256, 46);
+            this.label5.Location = new System.Drawing.Point(293, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 16);
+            this.label5.Size = new System.Drawing.Size(63, 16);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Biển kiểm soát :";
+            this.label5.Text = "Nơi đến  :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(256, 18);
+            this.label4.Location = new System.Drawing.Point(329, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 16);
             this.label4.TabIndex = 2;
@@ -245,18 +263,21 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(6, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
+            this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Tuyến :";
+            this.label2.Text = "Nơi đi :";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.luotve_rdo);
+            this.groupBox3.Controls.Add(this.luotdi_rdo);
+            this.groupBox3.Controls.Add(this.noiDenSearch_lb);
             this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.noiDiSearch_lb);
+            this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -272,7 +293,7 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = global::BanVeXeKhach.Properties.Resources.Reload_03;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(9, 174);
+            this.button4.Location = new System.Drawing.Point(9, 190);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(132, 45);
@@ -280,6 +301,7 @@
             this.button4.Text = "  Reset";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.UseWaitCursor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -296,49 +318,82 @@
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.UseWaitCursor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(9, 129);
+            this.dateTimePicker1.Location = new System.Drawing.Point(7, 154);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(135, 22);
             this.dateTimePicker1.TabIndex = 5;
             // 
-            // radioButton2
+            // luotve_rdo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(72, 67);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(68, 20);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Lượt về";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.luotve_rdo.AutoSize = true;
+            this.luotve_rdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.luotve_rdo.Location = new System.Drawing.Point(72, 67);
+            this.luotve_rdo.Name = "luotve_rdo";
+            this.luotve_rdo.Size = new System.Drawing.Size(68, 20);
+            this.luotve_rdo.TabIndex = 4;
+            this.luotve_rdo.TabStop = true;
+            this.luotve_rdo.Text = "Lượt về";
+            this.luotve_rdo.UseVisualStyleBackColor = true;
+            this.luotve_rdo.CheckedChanged += new System.EventHandler(this.luotdi_rdo_CheckedChanged);
             // 
-            // radioButton1
+            // luotdi_rdo
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(6, 67);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(64, 20);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Lượt đi";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.luotdi_rdo.AutoSize = true;
+            this.luotdi_rdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.luotdi_rdo.Location = new System.Drawing.Point(6, 67);
+            this.luotdi_rdo.Name = "luotdi_rdo";
+            this.luotdi_rdo.Size = new System.Drawing.Size(64, 20);
+            this.luotdi_rdo.TabIndex = 4;
+            this.luotdi_rdo.TabStop = true;
+            this.luotdi_rdo.Text = "Lượt đi";
+            this.luotdi_rdo.UseVisualStyleBackColor = true;
+            this.luotdi_rdo.CheckedChanged += new System.EventHandler(this.luotdi_rdo_CheckedChanged);
+            // 
+            // noiDenSearch_lb
+            // 
+            this.noiDenSearch_lb.AutoSize = true;
+            this.noiDenSearch_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noiDenSearch_lb.Location = new System.Drawing.Point(44, 121);
+            this.noiDenSearch_lb.Name = "noiDenSearch_lb";
+            this.noiDenSearch_lb.Size = new System.Drawing.Size(19, 16);
+            this.noiDenSearch_lb.TabIndex = 1;
+            this.noiDenSearch_lb.Text = "...";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 110);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 121);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 16);
+            this.label7.Size = new System.Drawing.Size(46, 16);
             this.label7.TabIndex = 1;
-            this.label7.Text = "ngày đi :";
+            this.label7.Text = "Đến : ";
+            // 
+            // noiDiSearch_lb
+            // 
+            this.noiDiSearch_lb.AutoSize = true;
+            this.noiDiSearch_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noiDiSearch_lb.Location = new System.Drawing.Point(37, 96);
+            this.noiDiSearch_lb.Name = "noiDiSearch_lb";
+            this.noiDiSearch_lb.Size = new System.Drawing.Size(19, 16);
+            this.noiDiSearch_lb.TabIndex = 1;
+            this.noiDiSearch_lb.Text = "...";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(5, 96);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 16);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Từ : ";
             // 
             // label6
             // 
@@ -373,6 +428,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.UseWaitCursor = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(543, 43);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(15, 16);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "đ";
+            // 
             // frmVeXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +455,7 @@
             this.ShowIcon = false;
             this.Text = "VeXe";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmVeXe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -414,23 +480,28 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton luotve_rdo;
+        private System.Windows.Forms.RadioButton luotdi_rdo;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label noiden_lb;
+        private System.Windows.Forms.Label ThoiGianKhoiHanh_lb;
+        private System.Windows.Forms.Label GiaVe_lb;
+        private System.Windows.Forms.Label noidi_lb;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label noiDiSearch_lb;
+        private System.Windows.Forms.Label noiDenSearch_lb;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDChuyenXe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDTuyenXe;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiDi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Noiden;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDLoaiXe;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaVe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianKhoiHanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianKetThuc;
+        private System.Windows.Forms.Label label8;
 
 
         #region Windows Form Designer generated code
@@ -439,9 +510,9 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        
 
-        }
+
+    }
 
         #endregion
 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -53,6 +55,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLoc = new System.Windows.Forms.Button();
+            this.ResetLichSu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -86,9 +89,9 @@
             this.groupBox1.Controls.Add(this.chkKhachHang);
             this.groupBox1.Controls.Add(this.chkChuyenXe);
             this.groupBox1.Location = new System.Drawing.Point(571, 45);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(176, 331);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -99,7 +102,7 @@
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.White;
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(72, 137);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(97, 20);
             this.dateTimePicker1.TabIndex = 4;
@@ -110,7 +113,7 @@
             this.cboNoiDen.Enabled = false;
             this.cboNoiDen.FormattingEnabled = true;
             this.cboNoiDen.Location = new System.Drawing.Point(73, 93);
-            this.cboNoiDen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboNoiDen.Margin = new System.Windows.Forms.Padding(2);
             this.cboNoiDen.Name = "cboNoiDen";
             this.cboNoiDen.Size = new System.Drawing.Size(96, 21);
             this.cboNoiDen.TabIndex = 3;
@@ -121,7 +124,7 @@
             this.cboNoiDi.Enabled = false;
             this.cboNoiDi.FormattingEnabled = true;
             this.cboNoiDi.Location = new System.Drawing.Point(73, 59);
-            this.cboNoiDi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboNoiDi.Margin = new System.Windows.Forms.Padding(2);
             this.cboNoiDi.Name = "cboNoiDi";
             this.cboNoiDi.Size = new System.Drawing.Size(96, 21);
             this.cboNoiDi.TabIndex = 3;
@@ -131,7 +134,7 @@
             this.txtCCCD.BackColor = System.Drawing.Color.White;
             this.txtCCCD.Enabled = false;
             this.txtCCCD.Location = new System.Drawing.Point(93, 291);
-            this.txtCCCD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCCCD.Margin = new System.Windows.Forms.Padding(2);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(76, 20);
             this.txtCCCD.TabIndex = 2;
@@ -151,7 +154,7 @@
             this.txtSDT.BackColor = System.Drawing.Color.White;
             this.txtSDT.Enabled = false;
             this.txtSDT.Location = new System.Drawing.Point(93, 251);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(76, 20);
             this.txtSDT.TabIndex = 2;
@@ -181,7 +184,7 @@
             this.txtTenKH.BackColor = System.Drawing.Color.White;
             this.txtTenKH.Enabled = false;
             this.txtTenKH.Location = new System.Drawing.Point(93, 219);
-            this.txtTenKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenKH.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(76, 20);
             this.txtTenKH.TabIndex = 2;
@@ -220,7 +223,7 @@
             // 
             this.chkKhachHang.AutoSize = true;
             this.chkKhachHang.Location = new System.Drawing.Point(5, 180);
-            this.chkKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.chkKhachHang.Name = "chkKhachHang";
             this.chkKhachHang.Size = new System.Drawing.Size(128, 17);
             this.chkKhachHang.TabIndex = 0;
@@ -232,7 +235,7 @@
             // 
             this.chkChuyenXe.AutoSize = true;
             this.chkChuyenXe.Location = new System.Drawing.Point(5, 28);
-            this.chkChuyenXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkChuyenXe.Margin = new System.Windows.Forms.Padding(2);
             this.chkChuyenXe.Name = "chkChuyenXe";
             this.chkChuyenXe.Size = new System.Drawing.Size(120, 17);
             this.chkChuyenXe.TabIndex = 0;
@@ -244,9 +247,9 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(9, 45);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(557, 401);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
@@ -254,6 +257,14 @@
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -262,8 +273,16 @@
             this.Column6,
             this.Column4,
             this.Column5});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.Location = new System.Drawing.Point(10, 28);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -320,26 +339,38 @@
             // 
             // btnLoc
             // 
-            this.btnLoc.Location = new System.Drawing.Point(618, 390);
-            this.btnLoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLoc.Location = new System.Drawing.Point(664, 397);
+            this.btnLoc.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(90, 50);
+            this.btnLoc.Size = new System.Drawing.Size(78, 27);
             this.btnLoc.TabIndex = 4;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
+            // 
+            // ResetLichSu
+            // 
+            this.ResetLichSu.Location = new System.Drawing.Point(571, 397);
+            this.ResetLichSu.Margin = new System.Windows.Forms.Padding(2);
+            this.ResetLichSu.Name = "ResetLichSu";
+            this.ResetLichSu.Size = new System.Drawing.Size(78, 27);
+            this.ResetLichSu.TabIndex = 4;
+            this.ResetLichSu.Text = "Reset";
+            this.ResetLichSu.UseVisualStyleBackColor = true;
+            this.ResetLichSu.Click += new System.EventHandler(this.ResetLichSu_Click);
             // 
             // frmLichSuBanVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 455);
+            this.Controls.Add(this.ResetLichSu);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLichSuBanVe";
             this.Text = "frmLichSuBanVe";
             this.Load += new System.EventHandler(this.frmLichSuBanVe_Load);
@@ -379,5 +410,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button ResetLichSu;
     }
 }

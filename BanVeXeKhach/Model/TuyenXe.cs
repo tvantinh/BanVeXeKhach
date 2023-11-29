@@ -8,9 +8,10 @@ namespace BanVeXeKhach.Model
 {
     class TuyenXe
     {
-        public string noiDi { get; set; }
-        public string noiDen {get; set; }
-        public string Tuyen;
+        public string IdTuyen { get; set; }
+        public string Diem1 { get; set; }
+        public string Diem2 {get; set; }
+        public string Tuyen { get; set; }
         public TuyenXe()
         {
 

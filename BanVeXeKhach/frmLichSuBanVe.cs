@@ -120,5 +120,10 @@ namespace BanVeXeKhach
                 txtCCCD.Enabled = true;
             }
         }
+
+        private void ResetLichSu_Click(object sender, EventArgs e)
+        {
+            loadGridView();
+        }
     }
 }
