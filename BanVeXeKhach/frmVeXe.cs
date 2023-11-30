@@ -43,16 +43,17 @@ namespace BanVeXeKhach
             string str = "select * from ChuyenXe";
             DataTable dt = db.getDataTable(str);
             dataGridView2.DataSource = dt;
+            
         }
         private void datVe_VX_Click(object sender, EventArgs e)
         {
             
         }
 
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
-            string str = "select * from ChuyenXe where noidi = N'"+ tx.Diem1+"' and noiden = N'"+tx.Diem2+"'";
+            string str = "select * from ChuyenXe where noidi = N'"+ tx.Diem1 +"' and noiden = N'"+tx.Diem2 +"' and (thoigiankhoihanh >= '"+db.setdateDauNgay(dateTimePicker1.Value)+"' and thoigiankhoihanh < '"+ db.setdateCuoiNgay(dateTimePicker1.Value) + "')";
             DataTable dt = db.getDataTable(str);
             dataGridView2.DataSource = dt;
         }

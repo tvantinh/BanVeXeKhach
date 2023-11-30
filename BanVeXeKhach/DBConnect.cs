@@ -89,5 +89,15 @@ namespace BanVeXeKhach
             int kq = da.Update(dt);
             return kq;
         }
+        public string setdateDauNgay(DateTime dt)
+        {
+            string dt2 = dt.Date.ToString("yyyy-MM-dd 00:00:00");
+            return dt2;
+        }
+        public string setdateCuoiNgay(DateTime dt)
+        {
+            string dt2 = dt.Date.ToString("yyyy-MM-dd 23:59:59");
+            return dt2;
+        }
     }
 }
