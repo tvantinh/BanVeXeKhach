@@ -19,7 +19,7 @@ namespace BanVeXeKhach
             set { connect = value; }
         }
 
-        string str_connection = "Data Source=DESKTOP-CAAQMG8;Initial Catalog=BANVEXEKHACH;Integrated Security=True";
+        string str_connection = "Data Source=HUNG;Initial Catalog=BANVEXEKHACH;Integrated Security=True";
 
         public DBConnect()
         {

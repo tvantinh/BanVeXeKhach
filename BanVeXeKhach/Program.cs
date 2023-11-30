@@ -16,7 +16,7 @@ namespace BanVeXeKhach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmVeXe());
+            Application.Run(new TrangChu());
         }
     }
 }
