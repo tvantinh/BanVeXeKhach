@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-
+using BanVeXeKhach.Model;
 
 namespace BanVeXeKhach
 {
@@ -99,5 +99,6 @@ namespace BanVeXeKhach
             string dt2 = dt.Date.ToString("yyyy-MM-dd 23:59:59");
             return dt2;
         }
+        
     }
 }
