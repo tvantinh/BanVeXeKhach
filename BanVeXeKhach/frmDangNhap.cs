@@ -38,18 +38,18 @@ namespace BanVeXeKhach
         }
         private void submit_Click(object sender, EventArgs e)
         {
-            //string str = "select * from NhanVien where userName = '" + userName.Text+"'";
+            string str = "select * from NhanVien where userName = '" + userName.Text + "'";
             string mk = passWord.Text;
-            //DataTable dt = db.getDataTable(str);
+            DataTable dt = db.getDataTable(str);
             NhanVien nv = new NhanVien();
-            //foreach(DataRow i in dt.Rows)
-            //{ 
-            //    nv.IDNhanVien = i["IDNhanVien"].ToString();
-            //    nv.name = i["name"].ToString();
-            //    nv.userName = i["userName"].ToString();
-            //    nv.passWord = i["passWord"].ToString();
-            //    nv.chucVu = i["chucVu"].ToString();
-            //}
+            foreach (DataRow i in dt.Rows)
+            {
+                nv.IDNhanVien = i["IDNhanVien"].ToString();
+                nv.name = i["name"].ToString();
+                nv.userName = i["userName"].ToString();
+                nv.passWord = i["passWord"].ToString();
+                nv.chucVu = i["chucVu"].ToString();
+            }
 
 
             list();

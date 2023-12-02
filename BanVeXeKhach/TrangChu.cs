@@ -84,14 +84,14 @@ namespace BanVeXeKhach
         private void hientrang()
         {
             NhanVien nv = ttnv.MyProperty;
-            //if(nv.chucVu == "Nhân viên")
-            //{
-            //    nhanVien_TC.Enabled = false;
-            //}
-            //if(nv != null)
-            //{
-            //    label3.Text = nv.name;
-            //}
+            if (nv.chucVu == "Nhân viên")
+            {
+                nhanVien_TC.Enabled = false;
+            }
+            if (nv != null)
+            {
+                label3.Text = nv.name;
+            }
         }
     }
 }
