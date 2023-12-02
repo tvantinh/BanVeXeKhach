@@ -51,7 +51,6 @@
             this.cboChucVu = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -71,7 +70,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(388, 383);
+            this.btnThoat.Location = new System.Drawing.Point(478, 383);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(99, 43);
             this.btnThoat.TabIndex = 13;
@@ -335,22 +334,12 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(176, 397);
+            this.linkLabel1.Location = new System.Drawing.Point(60, 393);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(66, 20);
             this.linkLabel1.TabIndex = 35;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Trợ giúp";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(494, 383);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(99, 43);
-            this.btnXoa.TabIndex = 36;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // label2
             // 
@@ -394,7 +383,6 @@
             this.ClientSize = new System.Drawing.Size(756, 455);
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cboChucVu);
@@ -452,7 +440,6 @@
         private System.Windows.Forms.ComboBox cboChucVu;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.Label label12;

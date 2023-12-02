@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.button3 = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,43 +58,17 @@
             this.button3.Location = new System.Drawing.Point(31, 113);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 41);
+            this.button3.Size = new System.Drawing.Size(105, 41);
             this.button3.TabIndex = 61;
             this.button3.Text = "   Tìm kiếm";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.UseWaitCursor = true;
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Image = global::BanVeXeKhach.Properties.Resources.delete;
-            this.btnXoa.Location = new System.Drawing.Point(560, 113);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 41);
-            this.btnXoa.TabIndex = 3;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Image = global::BanVeXeKhach.Properties.Resources.Save_01;
-            this.btnSua.Location = new System.Drawing.Point(640, 113);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 41);
-            this.btnSua.TabIndex = 3;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            // 
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = global::BanVeXeKhach.Properties.Resources.plus;
-            this.btnThem.Location = new System.Drawing.Point(463, 113);
+            this.btnThem.Location = new System.Drawing.Point(622, 113);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(93, 41);
@@ -112,7 +84,7 @@
             this.Column1,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(14, 26);
+            this.dataGridView1.Location = new System.Drawing.Point(5, 25);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
@@ -144,20 +116,20 @@
             // 
             this.txtNoiDen.BackColor = System.Drawing.Color.White;
             this.txtNoiDen.Enabled = false;
-            this.txtNoiDen.Location = new System.Drawing.Point(587, 50);
+            this.txtNoiDen.Location = new System.Drawing.Point(570, 50);
             this.txtNoiDen.Margin = new System.Windows.Forms.Padding(2);
             this.txtNoiDen.Name = "txtNoiDen";
-            this.txtNoiDen.Size = new System.Drawing.Size(128, 20);
+            this.txtNoiDen.Size = new System.Drawing.Size(145, 20);
             this.txtNoiDen.TabIndex = 4;
             // 
             // txtNoiDi
             // 
             this.txtNoiDi.BackColor = System.Drawing.Color.White;
             this.txtNoiDi.Enabled = false;
-            this.txtNoiDi.Location = new System.Drawing.Point(336, 50);
+            this.txtNoiDi.Location = new System.Drawing.Point(351, 50);
             this.txtNoiDi.Margin = new System.Windows.Forms.Padding(2);
             this.txtNoiDi.Name = "txtNoiDi";
-            this.txtNoiDi.Size = new System.Drawing.Size(157, 20);
+            this.txtNoiDi.Size = new System.Drawing.Size(145, 20);
             this.txtNoiDi.TabIndex = 3;
             // 
             // txtMaTuyen
@@ -173,13 +145,13 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(536, 53);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(513, 53);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 15);
+            this.label5.Size = new System.Drawing.Size(61, 15);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Nơi đến:";
+            this.label5.Text = "Điểm 2 :";
             // 
             // button2
             // 
@@ -226,30 +198,28 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(294, 53);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 15);
+            this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Nơi đi:";
+            this.label4.Text = "Điểm 1 :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(32, 53);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 15);
+            this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã tuyến:";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.btnXoa);
-            this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.txtNoiDen);
             this.groupBox1.Controls.Add(this.txtNoiDi);
@@ -304,8 +274,6 @@
         #endregion
 
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtNoiDen;
