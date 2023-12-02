@@ -122,6 +122,7 @@
     <Compile Include="frmVeXe.Designer.cs">
       <DependentUpon>frmVeXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhachHang.cs" />
     <Compile Include="Model\ChuyenXe.cs" />
     <Compile Include="Model\NhanVien.cs" />
     <Compile Include="Model\ttnv.cs" />
