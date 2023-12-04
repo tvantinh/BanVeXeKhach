@@ -69,5 +69,10 @@ namespace BanVeXeKhach.Model
             }
             return chuyenXe;
         }
+        public void XoaChuyen(ChuyenXe cx)
+        {
+            string str = "DELETE chuyenxe WHERE idchuyenxe = '" + cx.IdChuyen + "'";
+            db.getNonQuery(str);
+        }
     }
 }

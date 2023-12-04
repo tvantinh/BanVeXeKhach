@@ -130,3 +130,4 @@ C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.cs
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.exe
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.pdb
 C:\Users\tjnk1\Desktop\file học tập\.net\BanVeXeKhach\BanVeXeKhach\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.SuaChuyenXe.resources
+C:\Users\tjnk1\Desktop\file học tập\.net\BanVeXeKhach\BanVeXeKhach\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.ThemChuyenXe.resources
