@@ -21,7 +21,6 @@ namespace BanVeXeKhach
         public frmChuyenXe()
         {
             InitializeComponent();
-
         }
 
         private void frmChuyenXe_Load(object sender, EventArgs e)
@@ -30,6 +29,7 @@ namespace BanVeXeKhach
         }
         private void loadgrvChuyen()
         {
+            dataGridView1.Rows.Clear();
             chuyenXes = cx.GetListChuyenXe();
             foreach (ChuyenXe i in chuyenXes)
             {
@@ -39,7 +39,7 @@ namespace BanVeXeKhach
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["Xem"].Index)
+            if (e.RowIndex >= 0 && e.RowIndex < chuyenXes.Count && e.ColumnIndex == dataGridView1.Columns["Xem"].Index)
             {
                 ChuyenXe chuyenxe = cx.GetChuyenXe(dataGridView1.Rows[e.RowIndex].Cells["IdChuyenXe"].Value.ToString());
                 noidi.Text = chuyenxe.Noidi;
@@ -50,22 +50,37 @@ namespace BanVeXeKhach
                 tentaixe.Text = chuyenxe.TenTaiXe;
                 loaixe.Text = chuyenxe.LoaiXe.ToString();
             }
-            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["Sua"].Index)
+            if (e.RowIndex >= 0 && e.RowIndex < chuyenXes.Count && e.ColumnIndex == dataGridView1.Columns["Sua"].Index)
             {
                 ChuyenXe chuyenxe = cx.GetChuyenXe(dataGridView1.Rows[e.RowIndex].Cells["IdChuyenXe"].Value.ToString());
-                
+                if (chuyenxe != null)
+                {
+                    SuaChuyenXe fm = new SuaChuyenXe(chuyenxe);
+                    fm.Show();
+                    loadgrvChuyen();
+                }
+                loadgrvChuyen();
             }
-            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["Xem"].Index)
+            if (e.RowIndex >= 0 && e.RowIndex < chuyenXes.Count && e.ColumnIndex == dataGridView1.Columns["Xoa"].Index)
             {
                 ChuyenXe chuyenxe = cx.GetChuyenXe(dataGridView1.Rows[e.RowIndex].Cells["IdChuyenXe"].Value.ToString());
-                noidi.Text = chuyenxe.Noidi;
-                noiden.Text = chuyenxe.Noiden;
-                tgdi.Text = chuyenxe.ThoiGiankhoihanh;
-                tgden.Text = chuyenxe.ThoiGianDen;
-                giave.Text = chuyenxe.GiaVe.ToString();
-                tentaixe.Text = chuyenxe.TenTaiXe;
-                loaixe.Text = chuyenxe.LoaiXe.ToString();
+                try
+                {
+                    cx.XoaChuyen(chuyenxe);
+                    MessageBox.Show("Xoá thành công!");
+                    loadgrvChuyen();
+                }catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi! Khóa ngoại.");
+                }
             }
+        }
+
+        private void addChuyen_Click(object sender, EventArgs e)
+        {
+            ThemChuyenXe frm = new ThemChuyenXe();
+            frm.Show();
+            loadgrvChuyen();
         }
     }
 }
