@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using BanVeXeKhach.Model;
+
 
 namespace BanVeXeKhach
 {
@@ -19,7 +19,7 @@ namespace BanVeXeKhach
             set { connect = value; }
         }
 
-        string str_connection = "Data Source=DESKTOP-CAAQMG8;Initial Catalog=BANVEXEKHACH;Integrated Security=True";
+        string str_connection = "Data Source=HUNG;Initial Catalog=BANVEXEKHACH;Integrated Security=True";
 
         public DBConnect()
         {
@@ -72,23 +72,14 @@ namespace BanVeXeKhach
             return ds;
         }
 
-        public int updateDatabase(DataTable dt)
+        public int updateDatabase(DataTable dt, string sql)
         {
-            string sql = "select * from tuyenxe";
             SqlDataAdapter da = new SqlDataAdapter(sql, connect);
             SqlCommandBuilder cb = new SqlCommandBuilder(da);
             int kq = da.Update(dt);
             return kq;
         }
 
-        public int updateDatabaseNV(DataTable dt)
-        {
-            string sql = "select * from NHANVIEN";
-            SqlDataAdapter da = new SqlDataAdapter(sql, connect);
-            SqlCommandBuilder cb = new SqlCommandBuilder(da);
-            int kq = da.Update(dt);
-            return kq;
-        }
         public string setdateDauNgay(DateTime dt)
         {
             string dt2 = dt.Date.ToString("yyyy-MM-dd 00:00:00");
@@ -99,6 +90,5 @@ namespace BanVeXeKhach
             string dt2 = dt.Date.ToString("yyyy-MM-dd 23:59:59");
             return dt2;
         }
-        
     }
 }

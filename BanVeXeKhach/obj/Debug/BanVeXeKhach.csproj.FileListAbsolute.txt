@@ -117,7 +117,6 @@ C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.fr
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.frmDatVe16Cho.resources
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.frmDatVe26Cho.resources
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.frmDoiMatKhau.resources
-C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.frmKhachHang.resources
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.frmQLNhanVien.resources
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.frmThongKe.resources
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.frmTuyenXe.resources
@@ -130,3 +129,6 @@ C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.cs
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.exe
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.pdb
 C:\Users\tjnk1\Desktop\file học tập\.net\BanVeXeKhach\BanVeXeKhach\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.SuaChuyenXe.resources
+C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.SuaChuyenXe.resources
+C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.SuaNhanVien.resources
+C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.csproj.CopyComplete

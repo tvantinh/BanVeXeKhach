@@ -57,8 +57,8 @@ namespace BanVeXeKhach
             string sql = "Select * From TUYENXE";
             DataTable dt_chuyen = db.getDataTable(sql);
             cboNoiDi.DataSource = dt_chuyen;
-            cboNoiDi.DisplayMember = "NoiDi";
-            cboNoiDi.ValueMember = "NoiDi";
+            cboNoiDi.DisplayMember = "Diem1";
+            cboNoiDi.ValueMember = "Diem1";
         }
 
         void loadComboDen()
@@ -66,20 +66,25 @@ namespace BanVeXeKhach
             string sql = "Select * From TUYENXE";
             DataTable dt_chuyen = db.getDataTable(sql);
             cboNoiDen.DataSource = dt_chuyen;
-            cboNoiDen.DisplayMember = "NoiDen";
-            cboNoiDen.ValueMember = "NoiDen";
+            cboNoiDen.DisplayMember = "diem2";
+            cboNoiDen.ValueMember = "diem2";
         }
 
         void loadTimKiem()
         {
             if (chkChuyenXe.Checked == true)
             {
-                string sql = "select cx.IDChuyenXe, IDVeXe, kh.IDKhachHang, GheNgoi, thoigianmua, kh.name FROM VEXE vx Inner join KHACHHANG kh on vx.IDKhachHang = kh.IDKhachHang Inner Join CHUYENXE cx on vx.IDChuyenXe = cx.IDChuyenXe Where noidi = N'"+cboNoiDi.SelectedValue.ToString()+"' AND noiden = N'"+cboNoiDen.SelectedValue.ToString()+"'  ";
+                string sql = "select cx.IDChuyenXe, IDVeXe, kh.IDKhachHang, GheNgoi, thoigianmua, kh.name FROM VEXE vx Inner join KHACHHANG kh on vx.IDKhachHang = kh.IDKhachHang Inner Join CHUYENXE cx on vx.IDChuyenXe = cx.IDChuyenXe Where noidi = N'" + cboNoiDi.SelectedValue.ToString() + "' AND noiden = N'" + cboNoiDen.SelectedValue.ToString() + "' AND cx.thoigiankhoihanh = '" + db.setdateDauNgay(dateTimePicker1.Value) + "' ";
                 dataGridView1.DataSource = db.getDataTable(sql);
             }
             else if (chkKhachHang.Checked == true)
             {
                 string sql = "select idchuyenxe, idvexe, khachhang.idkhachhang, ghengoi, thoigianmua, khachhang.name from vexe, khachhang where vexe.idkhachhang = khachhang.idkhachhang and name = N'" + txtTenKH.Text + "' OR numberPhone = '" + txtSDT.Text + "' OR CCCD = '" + txtCCCD.Text + "' ";
+                dataGridView1.DataSource = db.getDataTable(sql);
+            }
+            else if (chkChuyenXe.Checked == true && chkKhachHang.Checked == true)
+            {
+                string sql = "select cx.IDChuyenXe, IDVeXe, kh.IDKhachHang, GheNgoi, thoigianmua, kh.name FROM VEXE vx Inner join KHACHHANG kh on vx.IDKhachHang = kh.IDKhachHang Inner Join CHUYENXE cx on vx.IDChuyenXe = cx.IDChuyenXe Where noidi = N'" + cboNoiDi.SelectedValue.ToString() + "' AND noiden = N'" + cboNoiDen.SelectedValue.ToString() + "' AND cx.thoigiankhoihanh = '" + db.setdateDauNgay(dateTimePicker1.Value) + "' and (name = N'" + txtTenKH.Text + "' OR numberPhone = '" + txtSDT.Text + "' OR CCCD = '" + txtCCCD.Text + "') ";
                 dataGridView1.DataSource = db.getDataTable(sql);
             }
         }
@@ -92,7 +97,7 @@ namespace BanVeXeKhach
         private void chkChuyenXe_CheckStateChanged(object sender, EventArgs e)
         {
             if (chkChuyenXe.Checked == false)
-            { 
+            {
                 cboNoiDi.Enabled = false;
                 cboNoiDen.Enabled = false;
                 dateTimePicker1.Enabled = false;
@@ -107,7 +112,7 @@ namespace BanVeXeKhach
 
         private void chkKhachHang_CheckStateChanged(object sender, EventArgs e)
         {
-            if(chkKhachHang.Checked == false)
+            if (chkKhachHang.Checked == false)
             {
                 txtTenKH.Enabled = false;
                 txtSDT.Enabled = false;
@@ -125,5 +130,7 @@ namespace BanVeXeKhach
         {
             loadGridView();
         }
+
+
     }
 }

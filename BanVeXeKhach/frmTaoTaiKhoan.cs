@@ -15,10 +15,11 @@ namespace BanVeXeKhach
         DBConnect db = new DBConnect();
         DataTable da = new DataTable();
         DataColumn[] key = new DataColumn[1];
+        string str = "select *from nhanvien";
         public frmTaoTaiKhoan()
         {
             InitializeComponent();
-            string str = "select *from nhanvien";
+
             da = db.getDataTable(str);
             //set primary key-----------
             key[0] = da.Columns[0];
@@ -42,7 +43,7 @@ namespace BanVeXeKhach
             newrow["gioiTinh"] = radioButton1.Text;
             da.Rows.Add(newrow);
 
-            int kq = db.updateDatabaseNV(da);
+            int kq = db.updateDatabase(da, str);
             if (kq > 0)
                 MessageBox.Show("Tạo thành công");
             else
