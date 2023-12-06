@@ -118,6 +118,7 @@
     </Compile>
     <Compile Include="Model\ChuyenXe.cs" />
     <Compile Include="Model\NhanVien.cs" />
+    <Compile Include="Model\TaiXe.cs" />
     <Compile Include="Model\ttnv.cs" />
     <Compile Include="Model\TuyenXe.cs" />
     <Compile Include="Program.cs" />
@@ -133,6 +134,12 @@
     </Compile>
     <Compile Include="SuaNhanVien.Designer.cs">
       <DependentUpon>SuaNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemChuyenXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemChuyenXe.Designer.cs">
+      <DependentUpon>ThemChuyenXe.cs</DependentUpon>
     </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
@@ -188,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SuaNhanVien.resx">
       <DependentUpon>SuaNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemChuyenXe.resx">
+      <DependentUpon>ThemChuyenXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>

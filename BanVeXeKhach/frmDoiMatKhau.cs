@@ -17,16 +17,12 @@ namespace BanVeXeKhach
         DBConnect db = new DBConnect();
         string str = "select * from NhanVien";
         DataTable dt = new DataTable();
-        NhanVien nv = ttnv.MyProperty;
+
         DataSet ds = new DataSet();
-        SqlDataAdapter adapter;
-        SqlConnection connection;
-        SqlCommand command;
         public frmDoiMatKhau()
         {
             InitializeComponent();
-            adapter = new SqlDataAdapter(str, db.Connect);
-            adapter.Fill(ds, "NhanVien");
+        
         }
 
         void list()
@@ -50,9 +46,9 @@ namespace BanVeXeKhach
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            NhanVien nv = ttnv.MyProperty;
             string mk = txtMK.Text;
             dt = db.getDataTable(str);
-            //NhanVien nv = new NhanVien();
             foreach (DataRow i in dt.Rows)
             {
                 nv.IDNhanVien = i["IDNhanVien"].ToString();
@@ -62,16 +58,15 @@ namespace BanVeXeKhach
                 nv.chucVu = i["chucVu"].ToString();
             }
 
-
+            
             list();
-             //nv = ttnv.MyProperty; 
 
-            if (mk == nv.passWord)
+            if (mk != nv.passWord)
             {
                 MessageBox.Show("Sai mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            else if(mk == nv.passWord && txtNhapLai.Text != txtMKMoi.Text)
+            else if(mk != nv.passWord && txtNhapLai.Text != txtMKMoi.Text)
             {
                 MessageBox.Show("Xác nhận lại mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -79,32 +74,23 @@ namespace BanVeXeKhach
             }
             else
             {
-                //DataRow r = ds.Tables["NhanVien"].Rows[0];
-                //r.BeginEdit();
-                //r["password"] = txtNhapLai.Text;
-                //r.EndEdit();
+                string str = "Update NhanVien Set password = '" + txtNhapLai.Text + "' Where userName = '" + nv.userName + "' ";
+                int kt = db.getNonQuery(str);
+                if (kt == 1)
+                {
+                    MessageBox.Show("Đổi mật khẩu thành công");
 
-                //int kq = adapter.Update(ds.Tables["NhanVien"]);
-                //if(kq > 0)
-                //{
-                //    MessageBox.Show("Đổi mật khẩu thành công!", "Thành công");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Đổi mật khẩu không thành công!", "Thành công");
-
-                //}
-                command = connection.CreateCommand();
-                command.CommandText = "Update NhanVien Set password = '" + txtNhapLai.Text + "' where username  = '" + nv.userName + "' ";
-                command.ExecuteNonQuery();
-
+                }
+                else
+                {
+                    MessageBox.Show("Đổi mật khẩu thất bại thất bại");
+                }
             }
         }
 
         private void frmDoiMatKhau_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(str);
-            connection.Open();
+            
         }
     }
 }

@@ -132,3 +132,4 @@ C:\Users\tjnk1\Desktop\file học tập\.net\BanVeXeKhach\BanVeXeKhach\BanVeXeKh
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.SuaChuyenXe.resources
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.SuaNhanVien.resources
 C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.csproj.CopyComplete
+C:\Users\ad\Documents\GitHub\BanVeXeKhach\BanVeXeKhach\obj\Debug\BanVeXeKhach.ThemChuyenXe.resources
