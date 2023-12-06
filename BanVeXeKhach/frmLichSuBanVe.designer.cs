@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cboNoiDen = new System.Windows.Forms.ComboBox();
             this.cboNoiDi = new System.Windows.Forms.ComboBox();
             this.txtCCCD = new System.Windows.Forms.TextBox();
@@ -52,8 +51,9 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnLoc = new System.Windows.Forms.Button();
             this.ResetLichSu = new System.Windows.Forms.Button();
+            this.btnLoc = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -94,17 +94,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bộ lọc tìm kiếm";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.White;
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(90, 191);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(148, 19);
-            this.dateTimePicker1.TabIndex = 4;
             // 
             // cboNoiDen
             // 
@@ -320,6 +309,19 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 125;
             // 
+            // ResetLichSu
+            // 
+            this.ResetLichSu.Image = global::BanVeXeKhach.Properties.Resources.Reload_03;
+            this.ResetLichSu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ResetLichSu.Location = new System.Drawing.Point(752, 498);
+            this.ResetLichSu.Margin = new System.Windows.Forms.Padding(2);
+            this.ResetLichSu.Name = "ResetLichSu";
+            this.ResetLichSu.Size = new System.Drawing.Size(115, 51);
+            this.ResetLichSu.TabIndex = 4;
+            this.ResetLichSu.Text = "Reset";
+            this.ResetLichSu.UseVisualStyleBackColor = true;
+            this.ResetLichSu.Click += new System.EventHandler(this.ResetLichSu_Click);
+            // 
             // btnLoc
             // 
             this.btnLoc.Image = global::BanVeXeKhach.Properties.Resources.seach1;
@@ -333,18 +335,19 @@
             this.btnLoc.UseVisualStyleBackColor = true;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
-            // ResetLichSu
+            // dateTimePicker1
             // 
-            this.ResetLichSu.Image = global::BanVeXeKhach.Properties.Resources.Reload_03;
-            this.ResetLichSu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ResetLichSu.Location = new System.Drawing.Point(752, 498);
-            this.ResetLichSu.Margin = new System.Windows.Forms.Padding(2);
-            this.ResetLichSu.Name = "ResetLichSu";
-            this.ResetLichSu.Size = new System.Drawing.Size(115, 51);
-            this.ResetLichSu.TabIndex = 4;
-            this.ResetLichSu.Text = "Reset";
-            this.ResetLichSu.UseVisualStyleBackColor = true;
-            this.ResetLichSu.Click += new System.EventHandler(this.ResetLichSu_Click);
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.White;
+            this.dateTimePicker1.CustomFormat = "hh : mm : ss";
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker1.Location = new System.Drawing.Point(90, 191);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowUpDown = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(148, 22);
+            this.dateTimePicker1.TabIndex = 20;
             // 
             // frmLichSuBanVe
             // 
@@ -390,7 +393,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboNoiDen;
         private System.Windows.Forms.ComboBox cboNoiDi;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -398,5 +400,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button ResetLichSu;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

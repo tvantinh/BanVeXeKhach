@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BanVeXeKhach.Model;
 
 namespace BanVeXeKhach
 {
     public partial class SuaNhanVien : Form
     {
-        public SuaNhanVien()
+        public SuaNhanVien(NhanVien nhanvien)
         {
             InitializeComponent();
         }

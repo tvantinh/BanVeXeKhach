@@ -16,7 +16,7 @@ namespace BanVeXeKhach
         DBConnect db = new DBConnect();
         DataTable da = new DataTable();
         DataColumn[] key = new DataColumn[1];
-        string str = "select *from nhanvien";
+        string str = "Select idnhanvien, name, gioitinh, ngaysinh, cccd, numberphone, chucvu from Nhanvien ";
         public frmQLNhanVien()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace BanVeXeKhach
             key[0] = da.Columns[0];
             da.PrimaryKey = key;
             //--------------------------
-            //dataBinDing(da);
+            dataBinDing(da);
 
         }
         frmTaoTaiKhoan DK;
@@ -40,6 +40,7 @@ namespace BanVeXeKhach
         }
         public void DSNhanVien()
         {
+            
             dataGV_QLNhanVien.DataSource = da;
             dataBinDing(da);
 
@@ -48,7 +49,7 @@ namespace BanVeXeKhach
         private void frmQLNhanVien_Load(object sender, EventArgs e)
         {
             DSNhanVien();
-            //dataBinDing(da);
+            dataBinDing(da);
 
         }
 
@@ -67,7 +68,62 @@ namespace BanVeXeKhach
             txtSoDienThoai.DataBindings.Add("Text", pDT, "numberphone");
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtHoTen.Clear();
+            DSNhanVien();
+            dataBinDing(da);
+        }
+
+        void loadTimKiem()
+        {
+            string sql = "Select * From NhanVien Where name = N'" + txtHoTen.Text + "' ";
+            dataGV_QLNhanVien.DataSource = db.getDataTable(sql);
+            dataBinDing(da);
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            txtHoTen.Enabled = true;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataGV_QLNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGV_QLNhanVien.Columns[e.ColumnIndex].Name == "Xoa")
+            {
+                if (MessageBox.Show("Bạn có chắn chắc muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DataRow r = da.Rows.Find(txtMaNhanVien.Text);
+                    if (r != null)
+                    {
+                        r.Delete();
+                    }
+
+                    int kq = db.updateDatabase(da, str);
+                    if (kq != 0)
+                        MessageBox.Show("Xóa thành công");
+                    else
+                        MessageBox.Show("Xóa không thành công");
+                    DSNhanVien();
+                }
+            }
+            else if (dataGV_QLNhanVien.Columns[e.ColumnIndex].Name == "Sua")
+            {
+
+                txtCCCD.Enabled = true;
+                txtSoDienThoai.Enabled = true;
+                dateTimePicker1.Enabled = true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             DataRow r = da.Rows.Find(txtMaNhanVien.Text);
             if (r != null)
@@ -94,102 +150,21 @@ namespace BanVeXeKhach
                 MessageBox.Show("Sửa thành công");
             else
                 MessageBox.Show("Sửa không thành công");
-
-        }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
             DSNhanVien();
-
+            txtCCCD.Enabled = false;
+            txtSoDienThoai.Enabled = false;
+            dateTimePicker1.Enabled = false;
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            DataRow r = da.Rows.Find(txtMaNhanVien.Text);
-            if (r != null)
-            {
-                r.Delete();
-            }
-
-            int kq = db.updateDatabase(da, str);
-            if (kq != 0)
-                MessageBox.Show("Xóa thành công");
-            else
-                MessageBox.Show("Xóa không thành công");
-            DSNhanVien();
-        }
-
-        void loadTimKiem()
-        {
-            string sql = "Select * From NhanVien Where name = N'" + txtHoTen.Text + "' ";
-            dataGV_QLNhanVien.DataSource = db.getDataTable(sql);
-
-        }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             loadTimKiem();
+            txtHoTen.Enabled = false;
         }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
 
         private void dataGV_QLNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //dataBinDing(da);
-        }
-
-        private void dataGV_QLNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGV_QLNhanVien.Columns[e.ColumnIndex].Name == "Xoa")
-            {
-                if (MessageBox.Show("Bạn có chắn chắc muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    DataRow r = da.Rows.Find(txtMaNhanVien.Text);
-                    if (r != null)
-                    {
-                        r.Delete();
-                    }
-
-                    int kq = db.updateDatabase(da, str);
-                    if (kq != 0)
-                        MessageBox.Show("Xóa thành công");
-                    else
-                        MessageBox.Show("Xóa không thành công");
-                    DSNhanVien();
-                }
-            }
-            else if (dataGV_QLNhanVien.Columns[e.ColumnIndex].Name == "Sua")
-            {
-                DataRow r = da.Rows.Find(txtMaNhanVien.Text);
-                if (r != null)
-                {
-                    r.BeginEdit();
-                    r["name"] = txtHoTen.Text;
-                    if (rdoNam.Checked)
-                    {
-                        r["gioiTinh"] = rdoNam.Text;
-                    }
-                    else
-                    {
-                        r["gioiTinh"] = rdoNu.Text;
-                    }
-                    r["CCCD"] = txtCCCD.Text;
-                    r["numberPhone"] = txtSoDienThoai.Text;
-                    r["ngaySinh"] = dateTimePicker1.Text;
-                    r.EndEdit();
-                    DSNhanVien();
-                }
-
-                int kq = db.updateDatabase(da, str);
-                if (kq > 0)
-                    MessageBox.Show("Sửa thành công");
-                else
-                    MessageBox.Show("Sửa không thành công");
-            }
         }
     }
 }

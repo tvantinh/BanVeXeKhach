@@ -47,16 +47,16 @@
             this.m5_1 = new System.Windows.Forms.ToolStripMenuItem();
             this.m5_2 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel_Body = new System.Windows.Forms.Panel();
             this.lichSu_TC = new System.Windows.Forms.Button();
             this.datVe_TC = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nhanVien_TC = new System.Windows.Forms.Button();
             this.thongKe_TC = new System.Windows.Forms.Button();
             this.khachHang_TC = new System.Windows.Forms.Button();
             this.chuyenXe_TC = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel_Body = new System.Windows.Forms.Panel();
             this.panel_Top.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -76,7 +76,7 @@
             this.panel_Top.Controls.Add(this.pictureBox1);
             this.panel_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Top.Location = new System.Drawing.Point(0, 0);
-            this.panel_Top.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Top.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Top.Name = "panel_Top";
             this.panel_Top.Size = new System.Drawing.Size(1045, 144);
             this.panel_Top.TabIndex = 0;
@@ -113,7 +113,7 @@
             this.m5});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1045, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1045, 30);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip_TC";
             // 
@@ -125,7 +125,7 @@
             this.m2_3,
             this.m2_4});
             this.m2.Name = "m2";
-            this.m2.Size = new System.Drawing.Size(97, 24);
+            this.m2.Size = new System.Drawing.Size(97, 26);
             this.m2.Text = "HỆ THỐNG";
             // 
             // m2_1
@@ -157,7 +157,7 @@
             this.m3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m3_1});
             this.m3.Name = "m3";
-            this.m3.Size = new System.Drawing.Size(119, 24);
+            this.m3.Size = new System.Drawing.Size(119, 26);
             this.m3.Text = "KHÁCH HÀNG";
             // 
             // m3_1
@@ -173,7 +173,7 @@
             this.m4_2,
             this.m4_3});
             this.m4.Name = "m4";
-            this.m4.Size = new System.Drawing.Size(100, 24);
+            this.m4.Size = new System.Drawing.Size(100, 26);
             this.m4.Text = "TÀI KHOẢN";
             // 
             // m4_1
@@ -201,7 +201,7 @@
             this.m5_1,
             this.m5_2});
             this.m5.Name = "m5";
-            this.m5.Size = new System.Drawing.Size(156, 24);
+            this.m5.Size = new System.Drawing.Size(156, 26);
             this.m5.Text = "THÔNG TIN CHUNG";
             // 
             // m5_1
@@ -221,13 +221,49 @@
             this.groupBox1.Controls.Add(this.lichSu_TC);
             this.groupBox1.Controls.Add(this.datVe_TC);
             this.groupBox1.Location = new System.Drawing.Point(4, 33);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(283, 86);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hệ thống";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.nhanVien_TC);
+            this.groupBox2.Controls.Add(this.thongKe_TC);
+            this.groupBox2.Controls.Add(this.khachHang_TC);
+            this.groupBox2.Controls.Add(this.chuyenXe_TC);
+            this.groupBox2.Location = new System.Drawing.Point(295, 33);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(513, 86);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Quản lý";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(843, 110);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(193, 35);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "NHÀ XE TÂN AN";
+            // 
+            // panel_Body
+            // 
+            this.panel_Body.BackColor = System.Drawing.SystemColors.Control;
+            this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Body.Location = new System.Drawing.Point(0, 144);
+            this.panel_Body.Margin = new System.Windows.Forms.Padding(4);
+            this.panel_Body.Name = "panel_Body";
+            this.panel_Body.Size = new System.Drawing.Size(1045, 606);
+            this.panel_Body.TabIndex = 1;
             // 
             // lichSu_TC
             // 
@@ -236,7 +272,7 @@
             this.lichSu_TC.Image = global::BanVeXeKhach.Properties.Resources.History__2_;
             this.lichSu_TC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lichSu_TC.Location = new System.Drawing.Point(155, 17);
-            this.lichSu_TC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lichSu_TC.Margin = new System.Windows.Forms.Padding(4);
             this.lichSu_TC.Name = "lichSu_TC";
             this.lichSu_TC.Size = new System.Drawing.Size(101, 53);
             this.lichSu_TC.TabIndex = 1;
@@ -253,7 +289,7 @@
             this.datVe_TC.Image = global::BanVeXeKhach.Properties.Resources.bus_ticket;
             this.datVe_TC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.datVe_TC.Location = new System.Drawing.Point(17, 16);
-            this.datVe_TC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.datVe_TC.Margin = new System.Windows.Forms.Padding(4);
             this.datVe_TC.Name = "datVe_TC";
             this.datVe_TC.Size = new System.Drawing.Size(120, 53);
             this.datVe_TC.TabIndex = 0;
@@ -262,21 +298,6 @@
             this.datVe_TC.UseVisualStyleBackColor = false;
             this.datVe_TC.Click += new System.EventHandler(this.datVe_TC_Click);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.nhanVien_TC);
-            this.groupBox2.Controls.Add(this.thongKe_TC);
-            this.groupBox2.Controls.Add(this.khachHang_TC);
-            this.groupBox2.Controls.Add(this.chuyenXe_TC);
-            this.groupBox2.Location = new System.Drawing.Point(295, 33);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(513, 86);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Quản lý";
-            // 
             // nhanVien_TC
             // 
             this.nhanVien_TC.BackColor = System.Drawing.SystemColors.MenuBar;
@@ -284,7 +305,7 @@
             this.nhanVien_TC.Image = global::BanVeXeKhach.Properties.Resources.users__1_;
             this.nhanVien_TC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.nhanVien_TC.Location = new System.Drawing.Point(380, 17);
-            this.nhanVien_TC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nhanVien_TC.Margin = new System.Windows.Forms.Padding(4);
             this.nhanVien_TC.Name = "nhanVien_TC";
             this.nhanVien_TC.Size = new System.Drawing.Size(116, 53);
             this.nhanVien_TC.TabIndex = 4;
@@ -300,11 +321,11 @@
             this.thongKe_TC.Image = global::BanVeXeKhach.Properties.Resources.Statistics;
             this.thongKe_TC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.thongKe_TC.Location = new System.Drawing.Point(259, 17);
-            this.thongKe_TC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.thongKe_TC.Margin = new System.Windows.Forms.Padding(4);
             this.thongKe_TC.Name = "thongKe_TC";
             this.thongKe_TC.Size = new System.Drawing.Size(113, 53);
             this.thongKe_TC.TabIndex = 3;
-            this.thongKe_TC.Text = "Thống kê";
+            this.thongKe_TC.Text = "Tài khoản";
             this.thongKe_TC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.thongKe_TC.UseVisualStyleBackColor = false;
             this.thongKe_TC.Click += new System.EventHandler(this.thongKe_TC_Click);
@@ -317,7 +338,7 @@
             this.khachHang_TC.Image = global::BanVeXeKhach.Properties.Resources.iconbus1;
             this.khachHang_TC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.khachHang_TC.Location = new System.Drawing.Point(139, 16);
-            this.khachHang_TC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.khachHang_TC.Margin = new System.Windows.Forms.Padding(4);
             this.khachHang_TC.Name = "khachHang_TC";
             this.khachHang_TC.Size = new System.Drawing.Size(112, 53);
             this.khachHang_TC.TabIndex = 2;
@@ -333,7 +354,7 @@
             this.chuyenXe_TC.Image = global::BanVeXeKhach.Properties.Resources.Maps___Bus;
             this.chuyenXe_TC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.chuyenXe_TC.Location = new System.Drawing.Point(8, 17);
-            this.chuyenXe_TC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chuyenXe_TC.Margin = new System.Windows.Forms.Padding(4);
             this.chuyenXe_TC.Name = "chuyenXe_TC";
             this.chuyenXe_TC.Size = new System.Drawing.Size(123, 53);
             this.chuyenXe_TC.TabIndex = 1;
@@ -342,37 +363,16 @@
             this.chuyenXe_TC.UseVisualStyleBackColor = false;
             this.chuyenXe_TC.Click += new System.EventHandler(this.chuyenXe_TC_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(843, 110);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 35);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "NHÀ XE TÂN AN";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BanVeXeKhach.Properties.Resources.bus;
             this.pictureBox1.Location = new System.Drawing.Point(888, 32);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(113, 78);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel_Body
-            // 
-            this.panel_Body.BackColor = System.Drawing.SystemColors.Control;
-            this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Body.Location = new System.Drawing.Point(0, 144);
-            this.panel_Body.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel_Body.Name = "panel_Body";
-            this.panel_Body.Size = new System.Drawing.Size(1045, 606);
-            this.panel_Body.TabIndex = 1;
             // 
             // TrangChu
             // 
@@ -382,7 +382,7 @@
             this.Controls.Add(this.panel_Body);
             this.Controls.Add(this.panel_Top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TrangChu";
             this.Text = "TrangChu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TrangChu_FormClosing);

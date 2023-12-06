@@ -17,8 +17,6 @@ namespace BanVeXeKhach
         DBConnect db = new DBConnect();
         string str = "select * from NhanVien";
         DataTable dt = new DataTable();
-
-        DataSet ds = new DataSet();
         public frmDoiMatKhau()
         {
             InitializeComponent();
@@ -59,22 +57,23 @@ namespace BanVeXeKhach
             }
 
             
-            list();
+            //list();
+            NhanVien nv1 = ttnv.ListEmployee.FirstOrDefault(b => b.userName == nv.userName);
 
-            if (mk != nv.passWord)
+            if (nv1.userName !=null && mk != nv.passWord)
             {
                 MessageBox.Show("Sai mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            else if(mk != nv.passWord && txtNhapLai.Text != txtMKMoi.Text)
+            else if(nv1.userName != null && mk == nv.passWord && txtNhapLai.Text != txtMKMoi.Text)
             {
                 MessageBox.Show("Xác nhận lại mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
 
             }
-            else
+            else if (nv1.userName != null && mk == nv.passWord && txtNhapLai.Text == txtMKMoi.Text)
             {
-                string str = "Update NhanVien Set password = '" + txtNhapLai.Text + "' Where userName = '" + nv.userName + "' ";
+                string str = "Update NhanVien Set password = '" + txtNhapLai.Text + "' Where userName = '"+nv1.userName+"' ";
                 int kt = db.getNonQuery(str);
                 if (kt == 1)
                 {
@@ -90,7 +89,12 @@ namespace BanVeXeKhach
 
         private void frmDoiMatKhau_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
