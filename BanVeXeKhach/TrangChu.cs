@@ -51,7 +51,7 @@ namespace BanVeXeKhach
 
         private void chuyenXe_TC_Click(object sender, EventArgs e)
         {
-            //openChildForm(new frm());
+            openChildForm(new frmChuyenXe());
         }
 
         private void tuyenXe_TC_Click(object sender, EventArgs e)
@@ -83,15 +83,15 @@ namespace BanVeXeKhach
         }
         private void hientrang()
         {
-            NhanVien nv = ttnv.MyProperty;
-            if (nv.chucVu == "Nhân viên")
-            {
-                nhanVien_TC.Enabled = false;
-            }
-            if (nv != null)
-            {
-                label3.Text = nv.name;
-            }
+            //NhanVien nv = ttnv.MyProperty;
+            //if (nv.chucVu == "Nhân viên")
+            //{
+            //    nhanVien_TC.Enabled = false;
+            //}
+            //if (nv != null)
+            //{
+            //    label3.Text = nv.name;
+            //}
         }
     }
 }
