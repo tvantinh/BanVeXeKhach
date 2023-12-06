@@ -51,7 +51,7 @@ namespace BanVeXeKhach
 
         private void chuyenXe_TC_Click(object sender, EventArgs e)
         {
-            //openChildForm(new frm());
+            openChildForm(new frmChuyenXe());
         }
 
         private void tuyenXe_TC_Click(object sender, EventArgs e)
