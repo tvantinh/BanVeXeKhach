@@ -58,16 +58,16 @@ namespace BanVeXeKhach
                 MessageBox.Show("vui lòng chọn chiều di chuyển!");
             }
 
-            //try
+            try
             {
                 int kt = db.getNonQuery(str);
                 MessageBox.Show("Thêm thành công!");
             }
-            //catch
-            //{
-            //    MessageBox.Show("Thêm thất bại! vui lòng kiểm tra lại thông tin!");
-            //}
-            
+            catch
+            {
+                MessageBox.Show("Thêm thất bại! vui lòng kiểm tra lại thông tin!");
+            }
+
         }
 
         private void luotdi_rdo_CheckedChanged(object sender, EventArgs e)
