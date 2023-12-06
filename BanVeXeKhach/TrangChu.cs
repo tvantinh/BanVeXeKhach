@@ -83,15 +83,31 @@ namespace BanVeXeKhach
         }
         private void hientrang()
         {
+<<<<<<< HEAD
             //NhanVien nv = ttnv.MyProperty;
+=======
+            NhanVien nv = ttnv.MyProperty;
+>>>>>>> 7f5183fceba32f1c3d73744bbed4514f71b08df7
             //if (nv.chucVu == "Nhân viên")
             //{
             //    nhanVien_TC.Enabled = false;
             //}
+<<<<<<< HEAD
             //if (nv != null)
             //{
             //    label3.Text = nv.name;
             //}
+=======
+            if (nv != null)
+            {
+                label3.Text = nv.name;
+            }
+>>>>>>> 7f5183fceba32f1c3d73744bbed4514f71b08df7
+        }
+
+        private void m4_2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmDoiMatKhau());
         }
     }
 }

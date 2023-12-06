@@ -129,6 +129,12 @@
     <Compile Include="SuaChuyenXe.Designer.cs">
       <DependentUpon>SuaChuyenXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuaNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaNhanVien.Designer.cs">
+      <DependentUpon>SuaNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemChuyenXe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </Compile>
     <EmbeddedResource Include="SuaChuyenXe.resx">
       <DependentUpon>SuaChuyenXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaNhanVien.resx">
+      <DependentUpon>SuaNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemChuyenXe.resx">
       <DependentUpon>ThemChuyenXe.cs</DependentUpon>
