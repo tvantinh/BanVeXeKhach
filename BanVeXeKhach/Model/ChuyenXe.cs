@@ -23,13 +23,14 @@ namespace BanVeXeKhach.Model
         public string IdXe { get; set; }
         public int LuongKhach { get; set; }
         public int LoaiXe { get; set; }
+        public bool TrangThai { get; set; }
         public ChuyenXe() 
         { 
 
         }
         public List<ChuyenXe> GetListChuyenXe()
         {
-            string strStr = "select IDChuyenXe, noidi,noiden,thoigiankhoihanh,thoigianden,IDTuyenXe,IDXe,LuongKhach,GiaVe,TAIXE.TenTaiXe from ChuyenXe, TAIXE where CHUYENXE.maTaiXe = TAIXE.maTaiXe";
+            string strStr = "select IDChuyenXe, noidi,noiden,thoigiankhoihanh,thoigianden,IDTuyenXe,Xe.IDXe,LuongKhach,GiaVe,TAIXE.TenTaiXe,TrangThai, Xe.LoaiXe from ChuyenXe, TAIXE, Xe where CHUYENXE.maTaiXe = TAIXE.maTaiXe and CHUYENXE.IDXe = Xe.IDXe";
             DataTable dt = db.getDataTable(strStr);
             List<ChuyenXe> chuyenXes = new List<ChuyenXe>();
             foreach (DataRow i in dt.Rows)
@@ -45,6 +46,8 @@ namespace BanVeXeKhach.Model
                 chuyenXe.IdXe = i["idxe"].ToString();
                 chuyenXe.LuongKhach = int.Parse(i["luongkhach"].ToString());
                 chuyenXe.GiaVe = double.Parse(i["giave"].ToString());
+                chuyenXe.TrangThai = bool.Parse(i["TrangThai"].ToString());
+                chuyenXe.LoaiXe = int.Parse(i["Loaixe"].ToString());
                 chuyenXes.Add(chuyenXe);
             }
             return chuyenXes;
@@ -69,10 +72,41 @@ namespace BanVeXeKhach.Model
             }
             return chuyenXe;
         }
+        public int count_Chuyenxe()
+        {
+            int i = 0;
+            List<ChuyenXe> cx = GetListChuyenXe();
+            i = cx.Count;
+            return i;
+        }
         public void XoaChuyen(ChuyenXe cx)
         {
             string str = "DELETE chuyenxe WHERE idchuyenxe = '" + cx.IdChuyen + "'";
             db.getNonQuery(str);
+        }
+        public List<ChuyenXe> GetListChuyenXeTheoDiaDiem( string noidi,string noiden)
+        {
+            string strStr = "select IDChuyenXe, noidi,noiden,thoigiankhoihanh,thoigianden,IDTuyenXe,Xe.IDXe,LuongKhach,GiaVe,TAIXE.TenTaiXe,TrangThai, Xe.LoaiXe from ChuyenXe, TAIXE, Xe where CHUYENXE.maTaiXe = TAIXE.maTaiXe and CHUYENXE.IDXe = Xe.IDXe and Chuyenxe.noidi = N'"+noidi+ "' and Chuyenxe.noiden = N'"+noiden+"'";
+            DataTable dt = db.getDataTable(strStr);
+            List<ChuyenXe> chuyenXes = new List<ChuyenXe>();
+            foreach (DataRow i in dt.Rows)
+            {
+                ChuyenXe chuyenXe = new ChuyenXe();
+                chuyenXe.IdChuyen = i["IdchuyenXe"].ToString();
+                chuyenXe.Noidi = i["noidi"].ToString();
+                chuyenXe.Noiden = i["noiden"].ToString();
+                chuyenXe.ThoiGiankhoihanh = i["thoigiankhoihanh"].ToString();
+                chuyenXe.ThoiGianDen = i["thoigianden"].ToString();
+                chuyenXe.IdTuyen = i["idtuyenXe"].ToString();
+                chuyenXe.TenTaiXe = i["TenTaiXe"].ToString();
+                chuyenXe.IdXe = i["idxe"].ToString();
+                chuyenXe.LuongKhach = int.Parse(i["luongkhach"].ToString());
+                chuyenXe.GiaVe = double.Parse(i["giave"].ToString());
+                chuyenXe.TrangThai = bool.Parse(i["TrangThai"].ToString());
+                chuyenXe.LoaiXe = int.Parse(i["Loaixe"].ToString());
+                chuyenXes.Add(chuyenXe);
+            }
+            return chuyenXes;
         }
     }
 }

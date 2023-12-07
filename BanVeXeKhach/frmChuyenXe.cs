@@ -57,8 +57,7 @@ namespace BanVeXeKhach
                 {
                     SuaChuyenXe fm = new SuaChuyenXe(chuyenxe);
                     fm.Show();
-                    loadgrvChuyen();
-                }
+                }                
                 loadgrvChuyen();
             }
             if (e.RowIndex >= 0 && e.RowIndex < chuyenXes.Count && e.ColumnIndex == dataGridView1.Columns["Xoa"].Index)
@@ -74,12 +73,12 @@ namespace BanVeXeKhach
                     MessageBox.Show("Lỗi! Khóa ngoại.");
                 }
             }
+            loadgrvChuyen();
         }
 
         private void addChuyen_Click(object sender, EventArgs e)
         {
-            ThemChuyenXe frm = new ThemChuyenXe();
-            frm.Show();
+            new ThemChuyenXe().ShowDialog();
             loadgrvChuyen();
         }
     }

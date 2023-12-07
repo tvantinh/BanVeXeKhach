@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using BanVeXeKhach.Model;
 namespace BanVeXeKhach
 {
-    public partial class TrangChu:Form
+    public partial class TrangChu : Form
     {
         public TrangChu()
         {
@@ -20,7 +20,7 @@ namespace BanVeXeKhach
         private Form currentFormChild;
         private void openChildForm(Form childForm)
         {
-            if(currentFormChild != null)
+            if (currentFormChild != null)
             {
                 currentFormChild.Close();
             }
@@ -61,7 +61,7 @@ namespace BanVeXeKhach
 
         private void thongKe_TC_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmThongKe());
+            
         }
 
         private void nhanVien_TC_Click(object sender, EventArgs e)
@@ -71,43 +71,35 @@ namespace BanVeXeKhach
         private void TrangChu_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult r = MessageBox.Show("Bạn có muốn thoát chương trình ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(r == DialogResult.No)
+            if (r == DialogResult.No)
             {
                 e.Cancel = true;
             }
         }
-
+        private void m4_2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmDoiMatKhau());
+        }
         private void close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
         private void hientrang()
         {
-<<<<<<< HEAD
             //NhanVien nv = ttnv.MyProperty;
-=======
             NhanVien nv = ttnv.MyProperty;
->>>>>>> 7f5183fceba32f1c3d73744bbed4514f71b08df7
             //if (nv.chucVu == "Nhân viên")
             //{
             //    nhanVien_TC.Enabled = false;
             //}
-<<<<<<< HEAD
             //if (nv != null)
             //{
             //    label3.Text = nv.name;
             //}
-=======
             if (nv != null)
             {
                 label3.Text = nv.name;
             }
->>>>>>> 7f5183fceba32f1c3d73744bbed4514f71b08df7
         }
-
-        private void m4_2_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frmDoiMatKhau());
-        }
-    }
+    } 
 }

@@ -19,6 +19,7 @@ namespace BanVeXeKhach
         List<Model.TuyenXe> tuyen = new List<Model.TuyenXe>();
         TaiXe t = new TaiXe();
         TuyenXe tu = new TuyenXe();
+        ChuyenXe cx = new ChuyenXe();
         public ThemChuyenXe()
         {
             InitializeComponent();
@@ -47,11 +48,11 @@ namespace BanVeXeKhach
             string str = "";
             if(luotdi_rdo.Checked == true)
             {
-                str = "insert chuyenxe values ('CX0" + tx.Count + 1 + "',N'" + t.Diem1 + "',N'" + t.Diem2 + "','" + dateTimePicker1.Text + "', '" + dateTimePicker2.Text + "', '" + comboBox.SelectedValue + "' , 'X01','" + comboBox3.SelectedValue + "',0, " + giave.Text + ")";
+                str = "insert chuyenxe values ('CX0" + (cx.count_Chuyenxe() + 1) + "',N'" + t.Diem1 + "',N'" + t.Diem2 + "','" + dateTimePicker1.Text + "', '" + dateTimePicker2.Text + "', '" + comboBox.SelectedValue + "' , 'X01','" + comboBox3.SelectedValue + "',0, " + giave.Text + ")";
             }
             else if(luotve_rdo.Checked == true)
             {
-                str = "insert chuyenxe values ('CX0" + tx.Count + 1 + "',N'" + t.Diem2 + "',N'" + t.Diem1 + "','" + dateTimePicker1.Text + "', '" + dateTimePicker2.Text + "', '" + comboBox.SelectedValue + "' , 'X01','" + comboBox3.SelectedValue + "',0, " + giave.Text + ")";
+                str = "insert chuyenxe values ('CX0" + (cx.count_Chuyenxe() + 1) + "',N'" + t.Diem2 + "',N'" + t.Diem1 + "','" + dateTimePicker1.Text + "', '" + dateTimePicker2.Text + "', '" + comboBox.SelectedValue + "' , 'X01','" + comboBox3.SelectedValue + "',0, " + giave.Text + ")";
             }
             else
             {

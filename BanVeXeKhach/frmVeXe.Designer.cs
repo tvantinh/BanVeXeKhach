@@ -30,12 +30,13 @@
         {
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.IDChuyenXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDTuyenXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NoiDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Noiden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianKhoiHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -60,7 +61,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.datVe_VX = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,16 +76,18 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDChuyenXe,
-            this.IDTuyenXe,
+            this.Column2,
             this.NoiDi,
             this.Noiden,
             this.GiaVe,
             this.ThoiGianKhoiHanh,
-            this.ThoiGianKetThuc});
+            this.Column3,
+            this.Column1});
             this.dataGridView2.GridColor = System.Drawing.Color.Silver;
             this.dataGridView2.Location = new System.Drawing.Point(5, 21);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(575, 269);
             this.dataGridView2.TabIndex = 47;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
@@ -97,13 +100,12 @@
             this.IDChuyenXe.ReadOnly = true;
             this.IDChuyenXe.Width = 50;
             // 
-            // IDTuyenXe
+            // Column2
             // 
-            this.IDTuyenXe.DataPropertyName = "IDTuyenXe";
-            this.IDTuyenXe.HeaderText = "Mã Tuyến Xe";
-            this.IDTuyenXe.Name = "IDTuyenXe";
-            this.IDTuyenXe.ReadOnly = true;
-            this.IDTuyenXe.Width = 50;
+            this.Column2.HeaderText = "Xe";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 50;
             // 
             // NoiDi
             // 
@@ -127,7 +129,7 @@
             this.GiaVe.HeaderText = "Giá Vé";
             this.GiaVe.Name = "GiaVe";
             this.GiaVe.ReadOnly = true;
-            this.GiaVe.Width = 70;
+            this.GiaVe.Width = 80;
             // 
             // ThoiGianKhoiHanh
             // 
@@ -137,13 +139,19 @@
             this.ThoiGianKhoiHanh.ReadOnly = true;
             this.ThoiGianKhoiHanh.Width = 110;
             // 
-            // ThoiGianKetThuc
+            // Column3
             // 
-            this.ThoiGianKetThuc.DataPropertyName = "thoigianden";
-            this.ThoiGianKetThuc.HeaderText = "Thời gian kết thúc dự kiến";
-            this.ThoiGianKetThuc.Name = "ThoiGianKetThuc";
-            this.ThoiGianKetThuc.ReadOnly = true;
-            this.ThoiGianKetThuc.Width = 110;
+            this.Column3.HeaderText = "Loại xe (Chỗ)";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 80;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Trạng thái";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 40;
             // 
             // label1
             // 
@@ -422,21 +430,23 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(135, 24);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // button1
+            // datVe_VX
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::BanVeXeKhach.Properties.Resources.Tick_02;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(605, 388);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 44);
-            this.button1.TabIndex = 67;
-            this.button1.Text = "THỰC HIỆN ĐẶT VÉ";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.UseWaitCursor = true;
+            this.datVe_VX.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datVe_VX.Image = global::BanVeXeKhach.Properties.Resources.Tick_02;
+            this.datVe_VX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.datVe_VX.Location = new System.Drawing.Point(605, 388);
+            this.datVe_VX.Margin = new System.Windows.Forms.Padding(2);
+            this.datVe_VX.Name = "datVe_VX";
+            this.datVe_VX.Size = new System.Drawing.Size(139, 44);
+            this.datVe_VX.TabIndex = 67;
+            this.datVe_VX.Text = "THỰC HIỆN ĐẶT VÉ";
+            this.datVe_VX.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.datVe_VX.UseVisualStyleBackColor = true;
+            this.datVe_VX.UseWaitCursor = true;
+            this.datVe_VX.Click += new System.EventHandler(this.datVe_VX_Click);
             // 
             // frmVeXe
             // 
@@ -445,7 +455,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(756, 455);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.datVe_VX);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -484,7 +494,7 @@
         private System.Windows.Forms.RadioButton luotdi_rdo;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button datVe_VX;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label noiden_lb;
         private System.Windows.Forms.Label ThoiGianKhoiHanh_lb;
@@ -494,14 +504,15 @@
         private System.Windows.Forms.Label noiDiSearch_lb;
         private System.Windows.Forms.Label noiDenSearch_lb;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDChuyenXe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDTuyenXe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiDi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Noiden;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaVe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianKhoiHanh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianKetThuc;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 
 
         #region Windows Form Designer generated code

@@ -92,12 +92,6 @@
     <Compile Include="frmQLNhanVien.Designer.cs">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThongKe.Designer.cs">
-      <DependentUpon>frmThongKe.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTuyenXe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,10 +111,12 @@
       <DependentUpon>frmVeXe.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ChuyenXe.cs" />
+    <Compile Include="Model\KhachHang.cs" />
     <Compile Include="Model\NhanVien.cs" />
     <Compile Include="Model\TaiXe.cs" />
     <Compile Include="Model\ttnv.cs" />
     <Compile Include="Model\TuyenXe.cs" />
+    <Compile Include="Model\VeXe.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuaChuyenXe.cs">
@@ -167,9 +163,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLNhanVien.resx">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmThongKe.resx">
-      <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTuyenXe.resx">
       <DependentUpon>frmTuyenXe.cs</DependentUpon>
