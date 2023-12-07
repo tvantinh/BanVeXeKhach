@@ -8,15 +8,17 @@ namespace BanVeXeKhach
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
+
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new frmVeXe());
+=======
+            Application.Run(new TrangChu());
+
+>>>>>>> 87c192b1587f6d28a18ad60946c5770f0260195c
         }
     }
 }

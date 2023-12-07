@@ -92,6 +92,21 @@
     <Compile Include="frmQLNhanVien.Designer.cs">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="frmThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongKe.Designer.cs">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTinTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinTaiKhoan.Designer.cs">
+      <DependentUpon>frmThongTinTaiKhoan.cs</DependentUpon>
+    </Compile>
+>>>>>>> 87c192b1587f6d28a18ad60946c5770f0260195c
     <Compile Include="frmTuyenXe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +179,15 @@
     <EmbeddedResource Include="frmQLNhanVien.resx">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="frmThongKe.resx">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinTaiKhoan.resx">
+      <DependentUpon>frmThongTinTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 87c192b1587f6d28a18ad60946c5770f0260195c
     <EmbeddedResource Include="frmTuyenXe.resx">
       <DependentUpon>frmTuyenXe.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +312,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\muiten2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seach.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

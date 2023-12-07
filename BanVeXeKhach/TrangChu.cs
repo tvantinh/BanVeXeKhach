@@ -61,7 +61,11 @@ namespace BanVeXeKhach
 
         private void thongKe_TC_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             
+=======
+            openChildForm(new frmThongTinTaiKhoan());
+>>>>>>> 87c192b1587f6d28a18ad60946c5770f0260195c
         }
 
         private void nhanVien_TC_Click(object sender, EventArgs e)
@@ -92,6 +96,10 @@ namespace BanVeXeKhach
             //{
             //    nhanVien_TC.Enabled = false;
             //}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 87c192b1587f6d28a18ad60946c5770f0260195c
             //if (nv != null)
             //{
             //    label3.Text = nv.name;
